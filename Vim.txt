@@ -1,0 +1,59 @@
+Basic usage
+===========
+vim <name of the file>  //Creates the file in vim.
+:<command>  //Command mode syntax.
+:e <path>  //Open the file.
+:v  //Visual mode, for selection and copy-pasting.
+y  //Yank (copy).
+x  //Cut
+p  //paste
+3dd  //Deletes 3 lines.
+i  //Insert mode.
+:f!  //Displays the file name without truncation.
+:set numebr  //Set line number.
+:set hlsearch  //Enables search highlighting.
+:noh  //Disable search highlighting until next search.
+:wq  //Save the file and close vim.
+:w  //Saves the file working on.
+gg  //Places the cursor at the start of the file.
+G  //Places the cursor at the end of the file.
+<line number>  //Takes to the line number.
+u  //Undo.
+Ctrl + r  //Redo.
+/<search term>  //Search for the term.
+n  //Searches in the direction your last search was.
+N  //Search in opposite direction.
+:split <path to the file>  //Split windows horizondally.
+:vsplit <path to the file>  //Split windows vertically.
+:set splitbelow  //To make split put the new buffer below the current buffer.
+:set splitright  //To make vsplit put the new buffer on the right of the current buffer.
+Ctrl + wr  //Change the location of split windows (from left to right and from top to bottom).
+Ctrl + ww  //Switch between windows.
+Ctrl + wq  //Quit a window.
+vim -O <file 1> <file 2>  //Opens files with vertical split.
+vim -o <file 1> <file 2>  //Opens files with horizontal split.
+
+Spell check
+===========
+:setlocal spell
+OR
+:setlocal spell spelllang=<language>
+//where <language> can be,
+//en for Universal.
+//en_us for America.
+//en_gb for British.
+//en_au for Australia.
+//en_nz for New Zealand.
+
+z=  //Put cursor on the incorrect word, press Esc and enter this to get suggestions. "z=" will not appear on screen.
+
+:set nospell  //Stops spell check.
+
+Enabling features permanently
+=============================
+vim ~/.vimrc
+
+set hlsearch
+set number
+set tabstop=4
+set shiftwidth=4

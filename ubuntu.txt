@@ -1,0 +1,212 @@
+Word wrap in micro
+==================
+micro ~/.config/micro/settings.json
+
+//Put the below code in it.
+
+{
+    "wordwrap": true,
+    "softwrap": true
+}
+
+dpkg
+====
+sudo dpkg --install <.deb file>  //Install the .deb file.
+dpkg --list  //List all .deb pacakges which are installed on the system.
+sudo dpkg --remove <package name>
+
+apt usage
+=============
+sudo apt install <package name>
+sudo apt remove --purge <package name>
+
+sudo apt autoremove
+
+Installing fonts
+================
+sudo cp -ir <source font directory> /usr/share/fonts/<custom destination font directory name>
+sudo fc-cache -fv
+
+Useful software
+===============
+synaptic minicom curl micro vim vlc gparted ttf-mscorefonts-installer trash-cli
+
+balenaEtcher
+p7zip
+
+To fix broken dependencies
+==========================
+su -l root
+sudo apt update && apt --fix-broken install
+
+Update font cahce
+=================
+sudo fc-cache -f -v
+
+trash-cli
+=========
+trash <file name>  //To send a specific file or directory to the trash.
+trash-list  //To list the files in the trash.
+trash-empty  //To empty your trash.
+trash-restore  //To restore files from the trash.
+trash-rm <file name>  //To permanently delete files from the trash.
+
+Make ubuntu use local time for hardware clock
+=============================================
+timedatectl set-local-rtc 1
+
+timedatectl  //To check the effect.
+
+Enable boot messages
+====================
+sudo vim /etc/default/grub
+Go to "GRUB_CMDLINE_LINUX_DEFAULT" and remove "quiet" and "splash"
+sudo update-grub
+
+Enable minimize and preview on click on ubuntu Dock
+===================================================
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
+
+gsettings reset org.gnome.shell.extensions.dash-to-dock click-action  //To set to default.
+
+Shortcut
+========
+ln -s <source directory/file> <destination directory/file>
+
+Add to $PATH
+============
+vim ~/.bashrc
+export PATH="<path to the directory>:$PATH"
+
+source ~/.bashrc
+OR
+Restart the terminal
+OR
+Re-login
+
+Create root password
+====================
+sudo passwd root
+
+Open Nautilus in admin mode
+===========================
+sudo nautilus
+
+Custom bootloader wallpaper
+===========================
+sudo nautilus /boot/grub  //Paste the .png wallpaper here.
+sudo update-grub
+
+Start menu shortcut
+===================
+cd /usr/share/applications
+sudo vim <application name>.desktop
+
+[Desktop Entry]
+Name=<application name>
+Exec=<full path to the executable> %f
+Terminal=false
+Type=Application
+Icon=<full path to the icon file>
+
+//"%f" is a single file name (including the path), even if multiple files are selected. The system reading the desktop entry should recognize that the program in question cannot handle multiple file arguments, and it should probably spawn and execute multiple copies of a program for each selected file if the program is not able to handle additional file arguments. If files are not on the local file system (i.e. are on HTTP or FTP locations), the files will be copied to the local file system and %f will be expanded to point at the temporary file. Used for programs that do not understand the URL syntax.
+
+Access shared folder of VirtualBox
+==================================
+sudo usermod -aG vboxsf <user name>
+
+Run script on login or startup
+==============================
+~/.bashrc  //Runs command/script when ever user logs-in, in GUI or, in terminal every time even after startup.
+-----------------------------------------------------------------------------------------------------------
+~/.config/autostart/<file name>.desktop  //Runs command/script when user logs-in, in GUI.
+
+----Example entry in "~/.config/autostart/<file name>.desktop" (login-sound.desktop)----
+
+[Desktop Entry]
+Name=startuprc
+Comment=Runs commands at startup
+Exec=/bin/bash <path>/login-script.sh
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true
+
+----Example of script file (login-script.sh)----
+
+#!/bin/bash
+vlc -I dummy --play-and-exit "/usr/share/sounds/Yaru/stereo/complete.oga"
+
+sudo chmod a+x login-script.sh
+-----------------------------------------------------------------------------------------------------------
+sudo vim /etc/systemd/system/<service name>.service  //Runs script at boot (before login).
+
+[Unit]
+Description=<a description>
+
+[Service]
+ExecStart=<absolute path to the script>
+Restart=always
+WorkingDirectory=<absolute path to the directory containing the script>
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl daemon-reload  //Run this command everytime the service/unit file is changed.
+sudo systemctl start <service name>.service
+sudo systemctl enable <service name>.service
+
+sudo systemctl stop <service name>.service
+-----------------------------------------------------------------------------------------------------------
+
+Default text editor
+===================
+vim ~/.selected_editor
+
+SELECTED_EDITOR="/usr/bin/vim"
+
+cron
+====
+crontab -l  //list cron jobs for the user.
+crontab -e  //Add a new cron job for the logged in user.
+
+Conditional Execution in Shell
+==============================
+command_1 && command_2  //Execute command_2 only when command_1 is executed successfully.
+command_1 || command_2  //Execute command_2 only when command_1 is not successful executed.
+command_1 ; command_2  //Execute command_1 and command_2 even if they are successful or not.
+
+Configure SFTP Server
+=====================
+sudo apt install openssh-server
+sudo vim /etc/ssh/sshd_config
+
+----Go the bottom and enter the below----
+Match group sftp
+	ChrootDirectory /home/<username>
+	X11Forwarding no
+	AllowTcpForwarding no
+	ForceCommand internal-sftp
+-----------------------------------------
+
+sudo systemctl restart ssh
+sudo addgroup sftp
+sudo usermod -a -G sftp <username>
+
+su -l <username>
+sudo chmod 700 /home/<username>  //To grant full access to the user on their own home directory, but deny access to the directory for all other users on the system.
+
+sftp <username>@127.0.0.1
+
+Python based HTTP Server
+========================
+python3 -m http.server 8080 --directory .
+
+Misc
+====
+su -l root  //Login as root.
+logout  //Logout from a user account.
+cd -  //Go to previous directory.
+cp -ir  //Asks for overwriting, and recursively.
+mv -i  //No -r option is available. Just use "mv -i" for moving directories too.
+sudo minicom -s  //For setting up.
