@@ -3,21 +3,29 @@ Basic usage
 vim <name of the file>  //Creates the file in vim.
 :<command>  //Command mode syntax.
 :e <path>  //Open the file.
-:v  //Visual mode, for selection and copy-pasting.
+i  //Insert mode.
+v  //Visual mode, for selection and copy-pasting.
 y  //Yank (copy).
 x  //Cut
 p  //paste
-3dd  //Deletes 3 lines.
-i  //Insert mode.
+3dd  //Delete/Cut 3 lines.
+3yy  //Copy 3 lines.
 :f!  //Displays the file name without truncation.
-:set numebr  //Set line number.
+gg  //Places the cursor at the start of the file.
+G  //Places the cursor at the end of the file.
+:<line number>  //Takes to the line number.
+^  //Go to begining of the line.
+$  //Go to end of the line.
+:set number  //Set line number.
+:set nonumber  //Unset line number.
+:set relativenumebr  //Set relative line number.
+:set norelativenumber  //Unset relative line number.
+:set number relativenumber  //Set hybrid line number.
+:set nonumber norelativenumber  //Unset hybrid line number.
 :set hlsearch  //Enables search highlighting.
 :noh  //Disable search highlighting until next search.
 :wq  //Save the file and close vim.
 :w  //Saves the file working on.
-gg  //Places the cursor at the start of the file.
-G  //Places the cursor at the end of the file.
-<line number>  //Takes to the line number.
 u  //Undo.
 Ctrl + r  //Redo.
 /<search term>  //Search for the term.
