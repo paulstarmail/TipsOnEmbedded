@@ -1,13 +1,13 @@
 Basic usage
 ===========
-vim <name of the file>  //Creates the file in vim.
+vim <name of the file>  //Creates the file in Vim.
 :<command>  //Command mode syntax.
 :e <path>  //Open the file.
 i  //Insert mode.
 v  //Visual mode, for selection and copy-pasting.
 y  //Yank (copy).
-x  //Cut
-p  //paste
+x  //Cut.
+p  //Paste.
 3dd  //Delete/Cut 3 lines.
 3yy  //Copy 3 lines.
 :f!  //Displays the file name without truncation.
@@ -24,9 +24,9 @@ $  //Go to end of the line.
 :set nonumber norelativenumber  //Unset hybrid line number.
 :set hlsearch  //Enables search highlighting.
 :noh  //Disable search highlighting until next search.
-:wq  //Save the file and close vim.
+:wq  //Save the file and close Vim.
 :w  //Saves the file working on.
-:q  //Close vim without saving.
+:q  //Close Vim without saving.
 u  //Undo.
 Ctrl + r  //Redo.
 /<search term>  //Search for the term.
