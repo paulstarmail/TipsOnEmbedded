@@ -26,7 +26,8 @@ $  //Go to end of the line.
 :noh  //Disable search highlighting until next search.
 :wq  //Save the file and close Vim.
 :w  //Saves the file working on.
-:q  //Close Vim without saving.
+:q  //Close Vim.
+:q!  //Close Vim without saving.
 u  //Undo.
 Ctrl + r  //Redo.
 /<search term>  //Search for the term.
