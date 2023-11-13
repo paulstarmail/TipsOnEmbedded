@@ -1,0 +1,75 @@
+Working directory		Staging area		Local git repo (.git directory)
+=================		============		===============================
+
+				Stage
+			--------------->
+									Commit
+							------------------------>
+							
+						Checkout
+		<--------------------------------------------
+							
+Setup
+=====
+git config --global user.name "<name>"  //Sets name as global.
+git config --global user.email "<email>"  //Sets email as global.
+git config --global core.editor vim  //Sets editor as Vim.
+git config user.name  //Prints user's name.
+git config user.email  //Prints user's email.
+
+General
+=======
+git init  //Initialize the local git repo, for starting new project locally.
+git clone <git URL>  //Clones the remote repo to local repo.
+git status  //Get the status of the working directory.
+git add <file 1> <file 2>  //Adds file 1 and file 2 to staging area. Now these files are Tracked.
+git add --all  //Add all tracked and untracked files from working directory to staging area. Tracked files are files that were in the last commit (Snapshot), as well as any newly staged files.
+git rm --cached <file 1> <file 2>  //Untracks/Unstages file 1. Automatically stages the change. Same as below command. See the section: Differences between git rm --cached, git restore --staged and git reset.
+git restore --staged <file 1> <file 2>  //Untracks/Unstages file 1. Automatically stages the change. Same as above command. See the section: Differences between git rm --cached, git restore --staged and git reset.
+git commit -m "<commit message>"  //Commits (Snapshot) the files in staging area with the message to local repo.
+git log  //View the commit log of the local repo.
+rm -rf .git  //Removes the local git repo.
+
+Ignore
+======
+The below command will work only if the .gitignore file is created for the first time:
+touch .gitignore && echo -e "/<directory 1>/\n/<file 1>\n/<directory 2>/<file 2>" > .gitignore  //directory 1/ and file 1 in root directory, and file 2 inside directory 2 which is in root directory, are that do not want to be tracked.
+
+In order to add previously tracked files and directories and/or files in .gitignore, that already exists. Append the directories and/or files to be ignored in .gitignore, then: 
+git rm --cached <file 1> <directory 1> //Untracks file 1 and directory 1. Automatically stages the change.
+
+Diff
+====
+git diff  //Compares same files in Working directory which are modified, with that of Staging area.
+git diff --staged  //Compares same files in Staging area, with that of last commit.
+git commit -a -m "<commit message>"  //Directly commit all Tracked files. This will not commit Untracked files. Tracked files are files that were in the last commit (Snapshot), as well as any newly staged files.
+
+Deleting (removing)
+===================
+Delete the file in the File Manager, and then run the below commands:
+git add <name of deleted file>
+git commit -m "<deleted message>"
+
+OR
+ 
+git rm <file 1>  //Deletes (removes) file 1 and stages the change.
+git commit -m "<deleted message>"
+
+Renaming
+========
+Rename the file in File Manager and then run the below commands:
+git add <new file name>
+git commit -m "<rename message>"
+
+OR
+
+git mv <file 1> <file 2>  //Renames file 1 to file 2 and stages the change.
+git commit -m "<rename message>"
+
+Differences between git rm --cached, git restore --staged and git reset
+=======================================================================
+git rm --cached file: removes the copy of the file from the index / staging-area, without touching the working tree copy. The proposed next commit now lacks the file. If the current commit has the file, and you do in fact make a next commit at this point, the difference between the previous commit and the new commit is that the file is gone.
+git restore --staged file: Git copies the file from the HEAD commit into the index, without touching the working tree copy. The index copy and the HEAD copy now match, whether or not they matched before. A new commit made now will have the same copy of the file as the current commit.
+If the current commit lacks the file, this has the effect of removing the file from the index. So in this case it does the same thing as git rm --cached.
+git reset file: this copies the HEAD version of the file to the index, just like git restore --staged file.
+(Note that git restore, unlike this particular form of git reset, can overwrite the working tree copy of some file, if you ask it to do so. The --staged option, without the --worktree option, directs it to write only to the index.)
