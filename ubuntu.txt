@@ -85,6 +85,10 @@ Restart the terminal
 OR
 Re-login
 
+List all directories of a binary or a command added to $PATH
+============================================================
+which -a <name of the binary or command>
+
 Create root password
 ====================
 sudo passwd root
