@@ -24,8 +24,8 @@ git clone <git URL>  //Clones the remote repo to local repo.
 git status  //Get the status of the working directory.
 git add <file 1> <file 2>  //Adds file 1 and file 2 to staging area. Now these files are Tracked.
 git add .  //Add all tracked and untracked files from working directory to staging area. Tracked files are files that were in the last commit (Snapshot), as well as any newly staged files.
-git rm --cached <file 1> <file 2>  //Untracks/Unstages file 1. Automatically stages the change. Same as below command. See the section: Differences between git rm --cached, git restore --staged and git reset.
-git restore --staged <file 1> <file 2>  //Untracks/Unstages file 1. Automatically stages the change. Same as above command. See the section: Differences between git rm --cached, git restore --staged and git reset.
+git rm --cached <file 1> <file 2>  //Untracks/Unstages file 1 and file 2. Automatically stages the change. Same as below command. See the section: "Differences between git rm --cached, git restore --staged and git reset".
+git restore --staged <file 1> <file 2>  //Untracks/Unstages file 1 and file 2. Automatically stages the change. Same as above command. See the section: "Differences between git rm --cached, git restore --staged and git reset".
 git commit -m "<commit message>"  //Commits (Snapshot) the files in staging area with the message to local repo.
 git commit --amend  //Opens text editor to change the last commit message. This should be executed only after modifying the files/directories, and adding them to staging area. Amending modifies the last commit to include, this, new changes.
 git log  //View the commit log of the local repo.
