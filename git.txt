@@ -23,10 +23,11 @@ git init  //Initialize the local git repo, for starting new project locally.
 git clone <git URL>  //Clones the remote repo to local repo.
 git status  //Get the status of the working directory.
 git add <file 1> <file 2>  //Adds file 1 and file 2 to staging area. Now these files are Tracked.
-git add --all  //Add all tracked and untracked files from working directory to staging area. Tracked files are files that were in the last commit (Snapshot), as well as any newly staged files.
+git add .  //Add all tracked and untracked files from working directory to staging area. Tracked files are files that were in the last commit (Snapshot), as well as any newly staged files.
 git rm --cached <file 1> <file 2>  //Untracks/Unstages file 1. Automatically stages the change. Same as below command. See the section: Differences between git rm --cached, git restore --staged and git reset.
 git restore --staged <file 1> <file 2>  //Untracks/Unstages file 1. Automatically stages the change. Same as above command. See the section: Differences between git rm --cached, git restore --staged and git reset.
 git commit -m "<commit message>"  //Commits (Snapshot) the files in staging area with the message to local repo.
+git commit --amend  //Opens text editor to change the last commit message. This should be executed only after modifying the files/directories, and adding them to staging area. Amending modifies the last commit to include, this, new changes.
 git log  //View the commit log of the local repo.
 rm -rf .git  //Removes the local git repo.
 
@@ -43,6 +44,20 @@ Diff
 git diff  //Compares same files in Working directory which are modified, with that of Staging area.
 git diff --staged  //Compares same files in Staging area, with that of last commit.
 git commit -a -m "<commit message>"  //Directly commit all Tracked files. This will not commit Untracked files. Tracked files are files that were in the last commit (Snapshot), as well as any newly staged files.
+
+Git log
+=======
+git log -p  //Displays git log with the changes made in each commit.
+git log -p -<n>  //Displays git log with the changes made in each commit for the last "n" commits.
+git log --pretty=online  //Commits will be displayed in one line.
+git log --pretty=short  //Displays commit ID, author, message.
+git log --pretty=full  //Displays commit ID, commit, author, message. Author is someone who has created the file/directory. Commit is someone who has changed it.
+git log --since=<n>.days  //Displays the git log for the past "n" days.
+git log --since=<n>.weeks  //Displays the git log for the past "n" weeks.
+git log --since=<n>.months  //Displays the git log for the past "n" months.
+git log --since=<n>.years  //Displays the git log for the past "n" years.
+git log --pretty=format:"%h -- %an"  //Displays short commit ID and author's name. Refer git documentation for more format placeholders (like, %h, %an, %ae, etc.).
+git log --pretty=format:"%h -- %ae"  //Displays short commit ID and author's email.
 
 Deleting (removing)
 ===================
@@ -65,6 +80,8 @@ OR
 
 git mv <file 1> <file 2>  //Renames file 1 to file 2 and stages the change.
 git commit -m "<rename message>"
+
+
 
 Differences between git rm --cached, git restore --staged and git reset
 =======================================================================
