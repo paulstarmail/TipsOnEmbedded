@@ -59,6 +59,12 @@ git log --since=<n>.years  //Displays the git log for the past "n" years.
 git log --pretty=format:"%h -- %an"  //Displays short commit ID and author's name. Refer git documentation for more format placeholders (like, %h, %an, %ae, etc.).
 git log --pretty=format:"%h -- %ae"  //Displays short commit ID and author's email.
 
+Unstaging and Unmodifying
+=========================
+git restore --staged <file 1> <file 2>  //To unstage file 1 and file 2.
+git checkout -- <file 1>  //Restores file 1 to previous commit, if it is not currently staged.
+git checkout -f  //Restores the entire Working Directory to previous commit.
+
 Deleting (removing)
 ===================
 Delete the file in the File Manager, and then run the below commands:
@@ -80,8 +86,6 @@ OR
 
 git mv <file 1> <file 2>  //Renames file 1 to file 2 and stages the change.
 git commit -m "<rename message>"
-
-
 
 Differences between git rm --cached, git restore --staged and git reset
 =======================================================================
