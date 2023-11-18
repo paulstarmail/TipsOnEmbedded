@@ -123,7 +123,7 @@ sudo usermod -aG vboxsf <user name>
 Run script on login or startup
 ==============================
 ~/.bashrc  //Runs command/script when ever user logs-in, in GUI or, in terminal every time even after startup.
------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
 ~/.config/autostart/<file name>.desktop  //Runs command/script when user logs-in, in GUI.
 
 ----Example entry in "~/.config/autostart/<file name>.desktop" (login-sound.desktop)----
@@ -162,6 +162,10 @@ sudo systemctl enable <service name>.service
 
 sudo systemctl stop <service name>.service
 -----------------------------------------------------------------------------------------------------------
+
+Run script on logout or shutdown
+================================
+~/.bash_logout  //Runs command/script when ever user logs-out, in GUI or, in terminal every time even after startup.
 
 Default text editor
 ===================
