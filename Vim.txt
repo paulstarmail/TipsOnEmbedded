@@ -30,7 +30,8 @@ $  //Go to end of the line.
 :q!  //Close Vim without saving.
 u  //Undo.
 Ctrl + r  //Redo.
-/<search term>  //Search for the term.
+/<search term>  //Search for the term with case sensitive.
+/<search term> \c  //Search for the term with case insensitive.
 n  //Searches in the direction your last search was.
 N  //Search in opposite direction.
 :split <path to the file>  //Split windows horizondally.
