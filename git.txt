@@ -42,8 +42,8 @@ git restore --staged <file 1> <file 2>  //Untracks/Unstages file 1 and file 2. A
 git commit -m "<commit message>"  //Commits (Snapshot) the files in staging area with the message to Local repo.
 git commit --amend  //Opens text editor to change the last commit message. This should be executed only after modifying the files/directories, and adding them to staging area. Amending modifies the last commit to include, this, new changes.
 git log --all  //View the commit log of the Local repo.
-git checkout <commit ID to switch, from "git log --all" command>  //Switches to the state represented by the Commit ID.
-git checkout <branch name>  //Switches to last commit in the specified branch.
+git checkout <commit ID to switch, from "git log --all" command>  //Switches to the state represented by the Commit ID. It is recommended to commit current changes before checkout.
+git checkout <branch name>  //Switches to last commit in the specified branch. It is recommended to commit current changes before checkout.
 rm -rf .git  //Removes the local git repo.
 
 Ignore
