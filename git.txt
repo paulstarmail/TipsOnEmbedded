@@ -79,7 +79,7 @@ git commit -m "<rename message>"
 
 Remote repo
 ===========
-git remote add origin git@github.com:<path to the remote repo>.git  //Add assets to Remote git repo for th first time.
+git remote add origin git@github.com:<path to the remote repo>.git  //Add assets to Remote git repo for the first time.
 
 
 Differences between git rm --cached, git restore --staged and git reset
