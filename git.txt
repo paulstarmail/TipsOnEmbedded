@@ -17,8 +17,8 @@ git config --global -e  //To configure git.
 
 Setup Remote repo (GitHub)
 ==========================
-git remote add origin git@github.com:<path to the remote repo>.git  //Add assets to Remote git repo for the first time. From now on, "origin" becomes equivalent to "git@github.com:<path to the remote repo>.git".
-git push -u origin master  //Pushes the assets to remote repo on master branch.
+git remote add origin git@github.com:<path to the Remote repo>.git  //Add assets to Remote git repo for the first time. From now on, "origin" becomes equivalent to "git@github.com:<path to the Remote repo>.git".
+git push -u origin master  //Pushes the assets to Remote repo on master branch.
 
 //The below steps are not mandatory as GitHub will ask for Username and Password, otherwise.
 ssh-keygen -t rsa -b 4096 -C "<email ID used for GitHub>"  //Generates SSH key.
@@ -28,16 +28,22 @@ tail ~/.ssh/id_rsa.pub  //Displays SSH Public key.
 
 General
 =======
+HEAD  //A pointer to, current last commit.
 git init  //Initialize the local git repo, for starting new project locally.
-git clone <git URL>  //Clones the remote repo to local repo.
+git clone <git URL>  //Clones the Remote repo to Local repo.
+git fetch  //Fetches Remote repo to Local repo.
+git merge  //Merges the Local repo to Working directory.
+git pull  //Fetches Remote repo to Local repo and merges with Working directory.
 git status  //Get the status of the working directory.
 git add <file 1> <file 2>  //Adds file 1 and file 2 to staging area. Now these files are Tracked.
 git add .  //Add all tracked and untracked files from working directory to staging area. Tracked files are files that were in the last commit (Snapshot), as well as any newly staged files.
 git rm --cached <file 1> <file 2>  //Untracks/Unstages file 1 and file 2. Automatically stages the change. Same as below command. See the section: "Differences between git rm --cached, git restore --staged and git reset".
 git restore --staged <file 1> <file 2>  //Untracks/Unstages file 1 and file 2. Automatically stages the change. Same as above command. See the section: "Differences between git rm --cached, git restore --staged and git reset".
-git commit -m "<commit message>"  //Commits (Snapshot) the files in staging area with the message to local repo.
+git commit -m "<commit message>"  //Commits (Snapshot) the files in staging area with the message to Local repo.
 git commit --amend  //Opens text editor to change the last commit message. This should be executed only after modifying the files/directories, and adding them to staging area. Amending modifies the last commit to include, this, new changes.
-git log  //View the commit log of the local repo.
+git log --all  //View the commit log of the Local repo.
+git checkout <commit ID to switch, from "git log --all" command>  //Switches to the state represented by the Commit ID.
+git checkout <branch name>  //Switches to last commit in the specified branch.
 rm -rf .git  //Removes the local git repo.
 
 Ignore
