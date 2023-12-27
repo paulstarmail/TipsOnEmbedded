@@ -1,15 +1,35 @@
-Setup
-=====
+Setup Local repo
+=================
 git config --global user.name "<name>"  //Sets name as global.
 git config --global user.email "<email>"  //Sets email as global.
-git config --global core.editor vim  //Sets editor as Vim.
 git config user.name  //Prints user's name.
 git config user.email  //Prints user's email.
+git config --global core.editor "code --wait"  //Sets editor as VS Code.
+
+git config --global -e  //To configure git.
+
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+//Add the above to enable support for using VS Code as diff tool
+
+Setup Remote repo (GitHub)
+==========================
+git remote add origin git@github.com:<path to the remote repo>.git  //Add assets to Remote git repo for the first time. From now on, "origin" becomes equivalent to "git@github.com:<path to the remote repo>.git".
+git push -u origin master  //Pushes the assets to remote repo on master branch.
+
+//The below steps are not mandatory as GitHub will ask for Username and Password, otherwise.
+ssh-keygen -t rsa -b 4096 -C "<email ID used for GitHub>"  //Generates SSH key.
+eval $(ssh-agent -s)  //To check whether SSH is running.
+ssh-add ~/.ssh/id_rsa  //Adds the Private key to SSH agent.
+tail ~/.ssh/id_rsa.pub  //Displays SSH Public key.
 
 General
 =======
 git init  //Initialize the local git repo, for starting new project locally.
-git clone <git URL> <directory name>  //Clones the remote repo to local repo.
+git clone <git URL>  //Clones the remote repo to local repo.
 git status  //Get the status of the working directory.
 git add <file 1> <file 2>  //Adds file 1 and file 2 to staging area. Now these files are Tracked.
 git add .  //Add all tracked and untracked files from working directory to staging area. Tracked files are files that were in the last commit (Snapshot), as well as any newly staged files.
@@ -52,6 +72,7 @@ git log --pretty=format:"%h -- %ae"  //Displays short commit ID and author's ema
 Unstaging and Unmodifying
 =========================
 git restore --staged <file 1> <file 2>  //To unstage file 1 and file 2.
+git restore <file 1>  //Discards changes in Working directory for file 1.
 git checkout -- <file 1>  //Restores file 1 to previous commit, if it is not currently staged.
 git checkout -f  //Restores the entire Working Directory to previous commit.
 
@@ -77,14 +98,31 @@ OR
 git mv <file 1> <file 2>  //Renames file 1 to file 2 and stages the change.
 git commit -m "<rename message>"
 
-Remote repo
-===========
-git remote add origin git@github.com:<path to the remote repo>.git  //Add assets to Remote git repo for the first time. From now on, "origin" becomes equivalent to "git@github.com:<path to the remote repo>.git".
-ssh-keygen -t rsa -b 4096 -C "<email ID used for GitHub>"  //Generates SSH key.
-eval $(ssh-agent -s)  //To check whether SSH is running.
-ssh-add ~/.ssh/id_rsa  //Adds the Private key to SSH agent.
-tail ~/.ssh/id_rsa.pub  //Displays SSH Public key.
-git push -u origin master  //Pushes the assets to remote repo on master branch.
+Branching and Deleting Branch
+=============================
+git checkout -b <new branch name>  //Creates and shifts to new branch.
+git branch  //Lists all branches.
+git checkout <existing branch name>  //Shifts to existing branch. It is highly recommended that before checkout to another branch, make sure that all changes in the current branch are committed.
+
+git branch -d <branch to delete>  //Deletes branch. Produces error if the branch is not already merged.
+git branch -D <branch to delete>  //Deletes branch. Produces no error even if the branch is not already merged.
+
+git branch -v  //Lists all branches with their name, last commit ID and last commit message.
+git push -d origin <branch to delete>  //Deletes branch in Remote repo.
+
+Pushing a branch to Remote repo
+===============================
+git checkout <branch to push>  //Shifts to branch to push. It is highly recommended that before checkout to branch to push, make sure that all changes in the current branch are committed.
+git push origin <branch to push>  //It is highly recommended that all changes in the branch to push are committed.
+
+Merge, Merge Conflicts
+======================
+git merge <incoming branch from where assets are to be merged to current branch>  //Before running this command, make sure that, you are in the branch (current branch) to which assets are to be merged from incoming branch. Do a commit after merging.
+
+It is highly recommended to use, "Visual Studio Code" for solving Merge Conflicts. Do a commit after resolving merge conflict.
+
+git branch --merged  //Lists already merged branches.
+git branch --no-merged  //Lists branches which are not merged.
 
 Differences between git rm --cached, git restore --staged and git reset
 =======================================================================
