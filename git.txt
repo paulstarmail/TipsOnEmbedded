@@ -1,14 +1,3 @@
-Working directory		Staging area		Local git repo (.git directory)
-=================		============		===============================
-
-		Stage
-	------------------------------>
-						Commit
-					------------------------>
-							
-				Checkout
-	<------------------------------------------------------------
-							
 Setup
 =====
 git config --global user.name "<name>"  //Sets name as global.
@@ -20,7 +9,7 @@ git config user.email  //Prints user's email.
 General
 =======
 git init  //Initialize the local git repo, for starting new project locally.
-git clone <git URL>  //Clones the remote repo to local repo.
+git clone <git URL> <directory name>  //Clones the remote repo to local repo.
 git status  //Get the status of the working directory.
 git add <file 1> <file 2>  //Adds file 1 and file 2 to staging area. Now these files are Tracked.
 git add .  //Add all tracked and untracked files from working directory to staging area. Tracked files are files that were in the last commit (Snapshot), as well as any newly staged files.
@@ -49,7 +38,8 @@ Git log
 =======
 git log -p  //Displays git log with the changes made in each commit.
 git log -p -<n>  //Displays git log with the changes made in each commit for the last "n" commits.
-git log --pretty=online  //Commits will be displayed in one line.
+git log --stat  //Displays git log with a consolidated list of each commit.
+git log --pretty=oneline  //Commits will be displayed in one line.
 git log --pretty=short  //Displays commit ID, author, message.
 git log --pretty=full  //Displays commit ID, commit, author, message. Author is someone who has created the file/directory. Commit is someone who has changed it.
 git log --since=<n>.days  //Displays the git log for the past "n" days.
@@ -86,6 +76,11 @@ OR
 
 git mv <file 1> <file 2>  //Renames file 1 to file 2 and stages the change.
 git commit -m "<rename message>"
+
+Remote repo
+===========
+git remote add origin git@github.com:<path to the remote repo>.git  //Add assets to Remote git repo for th first time.
+
 
 Differences between git rm --cached, git restore --staged and git reset
 =======================================================================
