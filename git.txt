@@ -79,8 +79,12 @@ git commit -m "<rename message>"
 
 Remote repo
 ===========
-git remote add origin git@github.com:<path to the remote repo>.git  //Add assets to Remote git repo for the first time.
-
+git remote add origin git@github.com:<path to the remote repo>.git  //Add assets to Remote git repo for the first time. From now on, "origin" becomes equivalent to "git@github.com:<path to the remote repo>.git".
+ssh-keygen -t rsa -b 4096 -C "<email ID used for GitHub>"  //Generates SSH key.
+eval $(ssh-agent -s)  //To check whether SSH is running.
+ssh-add ~/.ssh/id_rsa  //Adds the Private key to SSH agent.
+tail ~/.ssh/id_rsa.pub  //Displays SSH Public key.
+git push -u origin master  //Pushes the assets to remote repo on master branch.
 
 Differences between git rm --cached, git restore --staged and git reset
 =======================================================================
