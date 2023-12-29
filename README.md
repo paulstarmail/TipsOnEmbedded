@@ -1,3 +1,6 @@
+# Micro Text Editor Cheat Sheet.pdf
+A list of shortcuts that can be useful while using, micro, a terminal based text editor.
+
 # Notes on Embedded C.pdf
 A compilation of notes on Embedded C.
 
