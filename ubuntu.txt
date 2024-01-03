@@ -63,7 +63,7 @@ timedatectl  //To check the effect.
 
 Enable boot messages
 ====================
-sudo micro /etc/default/grub
+sudo vim /etc/default/grub
 Go to "GRUB_CMDLINE_LINUX_DEFAULT" and remove "quiet" and "splash"
 sudo update-grub
 
@@ -80,7 +80,7 @@ ln -s <source directory/file> <destination directory/file>
 
 Add to $PATH
 ============
-micro ~/.bashrc
+vim ~/.bashrc
 export PATH="<path to the directory>:$PATH"
 
 source ~/.bashrc
@@ -109,7 +109,7 @@ sudo update-grub
 Start menu shortcut
 ===================
 cd /usr/share/applications
-sudo micro <application name>.desktop
+sudo vim <application name>.desktop
 
 [Desktop Entry]
 Name=<application name>
@@ -147,7 +147,7 @@ vlc -I dummy --play-and-exit "/usr/share/sounds/Yaru/stereo/complete.oga"
 
 sudo chmod a+x login-script.sh
 -----------------------------------------------------------------------------------------------------------
-sudo micro /etc/systemd/system/<service name>.service  //Runs script at boot (before login).
+sudo vim /etc/systemd/system/<service name>.service  //Runs script at boot (before login).
 
 [Unit]
 Description=<a description>
@@ -173,9 +173,9 @@ Run script on logout or shutdown
 
 Default text editor
 ===================
-micro ~/.selected_editor
+vim ~/.selected_editor
 
-SELECTED_EDITOR="/usr/bin/micro"
+SELECTED_EDITOR="/usr/bin/vim"
 
 cron
 ====
@@ -191,7 +191,7 @@ command_1 ; command_2  //Execute command_1 and command_2 even if they are succes
 Configure SFTP Server
 =====================
 sudo apt install openssh-server
-sudo micro /etc/ssh/sshd_config
+sudo vim /etc/ssh/sshd_config
 
 ----Go the bottom and enter the below----
 Match group sftp
