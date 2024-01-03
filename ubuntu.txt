@@ -33,8 +33,9 @@ sudo fc-cache -fv
 
 Useful software
 ===============
-synaptic minicom curl micro vim vlc gparted ttf-mscorefonts-installer trash-cli
+synaptic minicom curl vim vlc gparted ttf-mscorefonts-installer trash-cli
 
+micro
 balenaEtcher
 p7zip
 
