@@ -189,6 +189,20 @@ command_1 && command_2  //Execute command_2 only when command_1 is executed succ
 command_1 || command_2  //Execute command_2 only when command_1 is not successful executed.
 command_1 ; command_2  //Execute command_1 and command_2 even if they are successful or not.
 
+Samba Share
+===========
+Right-click on the folder to share in Nautilus > Properties > Local Network Share > Check "Share this folder", "Allow others to create and delete files in this folder" and "Guest access (for people without a user account)" > Share
+Install necessary packages and give permissions when asked.
+
+Run and observe the output below
+--------------------------------
+kite@kite-pc:~$ sudo gpasswd --add kite sambashare
+Adding user kite to group sambashare
+kite@kite-pc:~$ sudo smbpasswd -a kite
+New SMB password:
+Retype new SMB password:
+Added user kite.
+
 Configure SFTP Server
 =====================
 sudo apt install openssh-server
