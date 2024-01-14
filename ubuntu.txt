@@ -193,9 +193,12 @@ Samba Share
 ===========
 sudo apt install nautilus-share
 sudo reboot
-
+Right-click on the folder to share in Nautilus > Sharing Options
+OR
 Right-click on the folder to share in Nautilus > Properties > Local Network Share > Check "Share this folder", "Allow others to create and delete files in this folder" and "Guest access (for people without a user account)" > Share
 Install necessary packages and give permissions when asked.
+
+AND
 
 Run and observe the sample output below
 ---------------------------------------
