@@ -191,17 +191,20 @@ command_1 ; command_2  //Execute command_1 and command_2 even if they are succes
 
 Samba Share
 ===========
+sudo apt install nautilus-share
+sudo reboot
+
 Right-click on the folder to share in Nautilus > Properties > Local Network Share > Check "Share this folder", "Allow others to create and delete files in this folder" and "Guest access (for people without a user account)" > Share
 Install necessary packages and give permissions when asked.
 
 Run and observe the sample output below
 ---------------------------------------
-kite@kite-pc:~$ sudo gpasswd --add kite sambashare
-Adding user kite to group sambashare
-kite@kite-pc:~$ sudo smbpasswd -a kite
+hawk@hawk-pc:~$ sudo gpasswd --add hawk sambashare
+Adding user hawk to group sambashare
+hawk@hawk-pc:~$ sudo smbpasswd -a hawk
 New SMB password:
 Retype new SMB password:
-Added user kite.
+Added user hawk.
 
 Configure SFTP Server
 =====================
