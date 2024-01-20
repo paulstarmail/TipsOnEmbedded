@@ -9,6 +9,14 @@ micro ~/.config/micro/settings.json
     "softwrap": true
 }
 
+Resume playback when opened in mpv
+==================================
+micro ~/.config/mpv/mpv.conf
+
+//Put the below code in it.
+
+save-position-on-quit
+
 dpkg
 ====
 sudo dpkg --install <.deb file>  //Install the .deb file.
@@ -33,7 +41,7 @@ sudo fc-cache -fv
 
 Useful software
 ===============
-sudo apt install synaptic minicom curl vim smplayer gparted ttf-mscorefonts-installer trash-cli
+sudo apt install synaptic minicom curl vim xclip mpv gparted ttf-mscorefonts-installer trash-cli
 
 micro
 balenaEtcher
