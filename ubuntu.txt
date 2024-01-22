@@ -2,7 +2,7 @@ Word wrap in micro
 ==================
 micro ~/.config/micro/settings.json
 
-//Put the below code in it.
+//Put the below code in it, at the end.
 
 {
     "wordwrap": true,
@@ -41,9 +41,8 @@ sudo fc-cache -fv
 
 Useful software
 ===============
-sudo apt install synaptic minicom curl vim xclip mpv gparted ttf-mscorefonts-installer trash-cli
+sudo apt install synaptic minicom curl vim micro mpv gparted ttf-mscorefonts-installer trash-cli
 
-micro
 balenaEtcher
 p7zip
 
