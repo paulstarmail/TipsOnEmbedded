@@ -41,9 +41,8 @@ sudo fc-cache -fv
 
 Useful software
 ===============
-sudo apt install synaptic minicom curl vim micro mpv gparted ttf-mscorefonts-installer trash-cli
+sudo apt install synaptic minicom curl vim micro mpv gparted ttf-mscorefonts-installer trash-cli printer-driver-gutenprint
 
-balenaEtcher
 p7zip
 
 To fix broken dependencies
