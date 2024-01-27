@@ -1,1 +1,6 @@
+This is General Regular Expression (similar, not if same to, Perl regular expression).
+To use this with "grep" command in ubuntu, use as below:
+
+$ grep -P "<regular expression>" <file name>
+
 Companion video link: https://www.youtube.com/watch?v=sa-TUpSx1JA
