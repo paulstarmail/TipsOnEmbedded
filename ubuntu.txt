@@ -215,27 +215,24 @@ New SMB password:
 Retype new SMB password:
 Added user hawk.
 
-Configure SFTP Server
-=====================
-sudo apt install openssh-server
-sudo micro /etc/ssh/sshd_config
+Configure FTP Server
+====================
+sudo apt install vsftpd
+sudo micro /etc/vsftpd.conf
 
-----Go the bottom and enter the below----
-Match group sftp
-	ChrootDirectory /home/<username>
-	X11Forwarding no
-	AllowTcpForwarding no
-	ForceCommand internal-sftp
------------------------------------------
+Set the following options
+-------------------------
+anonymous_enable=NO
+local_enable=YES
+write_enable=YES
+chroot_local_user=YES
+user_sub_token=$USER
+local_root=/home/$USER
+allow_writeable_chroot=YES
 
-sudo systemctl restart ssh
-sudo addgroup sftp
-sudo usermod -a -G sftp <username>
-
-su -l <username>
-sudo chmod 700 /home/<username>  //To grant full access to the user on their own home directory, but deny access to the directory for all other users on the system.
-
-sftp <username>@127.0.0.1
+sudo adduser ftp_user
+sudo systemctl restart vsftpd
+sudo systemctl enable vsftpd
 
 Python based HTTP Server
 ========================
