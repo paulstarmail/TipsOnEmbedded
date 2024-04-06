@@ -1,4 +1,7 @@
 # Regular Expressions
+A Swiss Army Knife for those who are preparing for an interview on Embedded Software.
+
+# Regular Expressions
 A comprehensive tutorial on General Regular Expression (similar, not if same to, Perl regular expression).
 
 # Micro Text Editor Cheat Sheet.pdf
