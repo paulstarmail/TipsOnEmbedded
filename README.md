@@ -1,4 +1,4 @@
-# Regular Expressions
+# Core Embedded
 A Swiss Army Knife for those who are preparing for an interview on Embedded Software.
 
 # Regular Expressions
