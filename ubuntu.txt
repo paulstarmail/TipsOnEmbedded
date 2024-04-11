@@ -238,17 +238,22 @@ Python based HTTP Server
 ========================
 python3 -m http.server 8080 --directory .
 
-SSHFS
-=====
-sudo apt install sshfs
-mkdir <path to mount directory in host PC>
-sshfs <username of remote PC>@<IP address of remote PC>:<path to the folder in remote PC> <path to mount directory in host PC>  //To mount.
-fusermount -u <path to mount directory in host PC>  //To unmount.
+SSH in Nautilus
+===============
 
-Note
-----
-All these above commands are to be executed in the host PC.
-micro can be used with file mounted using SSHFS.
+Add a new sudo enabled user in the remote file system
+-----------------------------------------------------
+
+sudo adduser <username>
+sudo passwd <username>
+sudo usermod -aG sudo <username>
+
+Accessing through Nautilus
+--------------------------
+Go to "Other Locations" > Enter "ssh://<IP address>" > Connect.
+Login.
+Right Click > "Open in Remote Terminal".
+Enter the credentials of newly created user in remote file system and run the sudo commands.
 
 Misc
 ====
