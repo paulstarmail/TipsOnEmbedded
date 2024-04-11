@@ -240,20 +240,10 @@ python3 -m http.server 8080 --directory .
 
 SSH in Nautilus
 ===============
-
-Add a new sudo enabled user in the remote file system
------------------------------------------------------
-
-sudo adduser <username>
-sudo passwd <username>
-sudo usermod -aG sudo <username>
-
-Accessing through Nautilus
---------------------------
-Go to "Other Locations" > Enter "ssh://<IP address>" > Connect.
+Go to "Other Locations" > Enter "ssh://<username>@<IP address>" > Connect.
 Login.
 Right Click > "Open in Remote Terminal".
-Enter the credentials of newly created user in remote file system and run the sudo commands.
+Enter the credentials of the remote user in the remote file system and run the commands.
 
 Misc
 ====
