@@ -41,9 +41,9 @@ sudo fc-cache -fv
 
 Useful software
 ===============
-sudo apt install synaptic git rabbitvcs-cli rabbitvcs-core rabbitvcs-nautilus rabbitvcs-gedit meld minicom curl vim micro mpv gparted ttf-mscorefonts-installer trash-cli printer-driver-gutenprint
+sudo apt install synaptic git meld minicom curl vim gparted ttf-mscorefonts-installer printer-driver-gutenprint
 
-p7zip
+micro p7zip
 
 To fix broken dependencies
 ==========================
