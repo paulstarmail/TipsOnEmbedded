@@ -11,7 +11,7 @@ micro ~/.config/micro/settings.json
 
 Resume playback when opened in mpv
 ==================================
-micro ~/.config/mpv/mpv.conf
+vim ~/.config/mpv/mpv.conf
 
 //Put the below code in it.
 
@@ -41,7 +41,7 @@ sudo fc-cache -fv
 
 Useful software
 ===============
-sudo apt install synaptic git meld minicom curl vim gparted ttf-mscorefonts-installer openssh-server printer-driver-gutenprint
+sudo apt install synaptic git meld minicom curl vim gparted ttf-mscorefonts-installer xclip openssh-server printer-driver-gutenprint
 
 micro p7zip
 
@@ -70,7 +70,7 @@ timedatectl  //To check the effect.
 
 Enable boot messages
 ====================
-sudo micro /etc/default/grub
+sudo vim /etc/default/grub
 Go to "GRUB_CMDLINE_LINUX_DEFAULT" and remove "quiet" and "splash"
 sudo update-grub
 
@@ -87,7 +87,7 @@ ln -s <source directory/file> <destination directory/file>
 
 Add to $PATH
 ============
-micro ~/.bashrc
+vim ~/.bashrc
 export PATH="<path to the directory>:$PATH"
 
 source ~/.bashrc
@@ -116,7 +116,7 @@ sudo update-grub
 Start menu shortcut
 ===================
 cd /usr/share/applications
-sudo micro <application name>.desktop
+sudo vim <application name>.desktop
 
 [Desktop Entry]
 Name=<application name>
@@ -154,7 +154,7 @@ vlc -I dummy --play-and-exit "/usr/share/sounds/Yaru/stereo/complete.oga"
 
 sudo chmod a+x login-script.sh
 -----------------------------------------------------------------------------------------------------------
-sudo micro /etc/systemd/system/<service name>.service  //Runs script at boot (before login).
+sudo vim /etc/systemd/system/<service name>.service  //Runs script at boot (before login).
 
 [Unit]
 Description=<a description>
@@ -180,9 +180,9 @@ Run script on logout or shutdown
 
 Default text editor
 ===================
-micro ~/.selected_editor
+vim ~/.selected_editor
 
-SELECTED_EDITOR="/usr/bin/micro"
+SELECTED_EDITOR="/usr/bin/vim"
 
 cron
 ====
@@ -218,7 +218,7 @@ Added user hawk.
 Configure FTP Server
 ====================
 sudo apt install vsftpd
-sudo micro /etc/vsftpd.conf
+sudo vim /etc/vsftpd.conf
 
 Set the following options
 -------------------------
