@@ -1,6 +1,3 @@
-# Core Embedded
-A Swiss Army Knife of concepts on Embedded Software.
-
 # Regular Expressions
 A comprehensive tutorial on General Regular Expression (similar, not if same to, Perl regular expression).
 
