@@ -245,6 +245,15 @@ Login.
 Right Click > "Open in Remote Terminal".
 Enter the credentials of the remote user in the remote file system and run the commands on remote file system.
 
+Call to Hibernate failed: Invalid argument
+==========================================
+Remove resume/resume_offset kernel parameters from /etc/default/grub
+sudo update-grub
+reboot
+Return resume/resume_offset kernel parameters back to /etc/default/grub
+sudo update-grub
+sudo systemctl hibernate
+
 Misc
 ====
 su -l root  //Login as root.
