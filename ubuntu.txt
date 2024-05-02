@@ -43,7 +43,7 @@ Useful software
 ===============
 sudo apt install synaptic git meld minicom curl vim gparted ttf-mscorefonts-installer xclip openssh-server printer-driver-gutenprint
 
-micro p7zip
+micro p7zip PeaZip
 
 To fix broken dependencies
 ==========================
