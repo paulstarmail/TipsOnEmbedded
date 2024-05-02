@@ -245,14 +245,24 @@ Login.
 Right Click > "Open in Remote Terminal".
 Enter the credentials of the remote user in the remote file system and run the commands on remote file system.
 
-Call to Hibernate failed: Invalid argument
-==========================================
-Remove resume/resume_offset kernel parameters from /etc/default/grub
-sudo update-grub
-reboot
-Return resume/resume_offset kernel parameters back to /etc/default/grub
-sudo update-grub
-sudo systemctl hibernate
+Hibernation
+===========
+Create a swap partition during installation of ubuntu, which has a size more than the size of the RAM.
+OR
+If the swap partition was not created during installation of ubuntu, create one, which has a size more than the size of the RAM, using GParted Live USB. Then, "Mount at system startup" the swap partition, using "Disks" software in ubuntu, that is on the Hard Disk. Then reboot.
+
+Run the below command and it should produce a similar output.
+$ swapon --show
+NAME      TYPE       SIZE USED PRIO
+/dev/sda6 partition 16.6G   0B   -2
+
+Get the UUID of swap partition from GParted
+$ sudo vim /etc/default/grub
+Edit the below line:
+GRUB_CMDLINE_LINUX_DEFAULT="resume=<UUID of swap partition>"
+
+$ sudo update-grub
+$ reboot
 
 Misc
 ====
