@@ -48,7 +48,7 @@ micro p7zip
 To fix broken dependencies
 ==========================
 su -l root
-sudo apt update && apt --fix-broken install
+sudo apt update && sudo apt --fix-broken install
 
 Update font cahce
 =================
