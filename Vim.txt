@@ -30,6 +30,7 @@ $  //Go to end of the line.
 :q!  //Close Vim without saving.
 u  //Undo.
 Ctrl + r  //Redo.
+//By default, Vim uses regular expression for search and, search and replace.
 /<search term>  //Search for the term with case sensitive.
 /<search term, note: use "\<regex character>" to escape regex characters>  //For non-regex search.
 /<search term>\c  //Search for the term with case insensitive.
