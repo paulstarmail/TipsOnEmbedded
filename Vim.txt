@@ -31,7 +31,10 @@ $  //Go to end of the line.
 u  //Undo.
 Ctrl + r  //Redo.
 /<search term>  //Search for the term with case sensitive.
-/<search term> \c  //Search for the term with case insensitive.
+/<search term, note: use "\<regex character>" to escape regex characters>  //For non-regex search.
+/<search term>\c  //Search for the term with case insensitive.
+:%s/<search term>\c/<replace term>/g  //For case insensitive search to replace all. Use "\<regex character>" in search term or replace term to non-regex search (eascaping).
+:%s/<search term>\c/<replace term>/gc  //For case insensitive search to replace one by one, after confirmation. Use "\<regex character>" in search term or replace term to non-regex search (eascaping).
 n  //Searches in the direction your last search was.
 N  //Search in opposite direction.
 :split <path to the file>  //Split windows horizondally.
