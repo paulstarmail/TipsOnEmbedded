@@ -23,6 +23,19 @@ sudo dpkg --install <.deb file>  //Install the .deb file.
 dpkg --list  //List all .deb pacakges which are installed on the system.
 sudo dpkg --remove <package name>
 
+Adding new user
+===============
+sudo adduser <user name>  //Automatically creates home directory for the user.
+
+Deleting/Removing a user
+========================
+sudo deluser --remove-home <user name>  //Deletes/Removes user and his home directory.
+
+Granding sudo permissions
+=========================
+sudo adduser <user name> sudo
+//Re-login or reboot.
+
 apt usage
 =============
 sudo apt update
