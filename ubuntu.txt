@@ -252,7 +252,7 @@ python3 -m http.server 8080 --directory .
 
 SSH in Nautilus
 ===============
-Go to "Other Locations" > Enter "ssh://<remote username>@<remote IP address>" > Connect.
+Go to "Other Locations" > Enter "ssh://<remote username>@<remote IP address>/<absolute path to the directory>" > Connect.
 Login.
 Right Click > "Open in Remote Terminal".
 Enter the credentials of the remote user in the remote file system and run the commands on remote file system.
