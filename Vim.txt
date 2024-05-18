@@ -47,6 +47,7 @@ Ctrl + ww  //Switch between windows.
 Ctrl + wq  //Quit a window.
 vim -O <file 1> <file 2>  //Opens files with vertical split.
 vim -o <file 1> <file 2>  //Opens files with horizontal split.
+vim scp://<user name>@<IP of remote host>/<absolute path to the file>  //To remotely work on a file. Eg: vim scp://pi@192.168.1.16//home/pi/Amal.txt
 
 Spell check
 ===========
