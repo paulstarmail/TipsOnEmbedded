@@ -4,10 +4,10 @@ vim <name of the file>  //Creates the file in Vim.
 :<command>  //Command mode syntax.
 :e <path>  //Open the file.
 i  //Insert mode.
-v  //Visual mode, for selection and copy-pasting.
+v  //Visual mode, for selection and copy/cut-pasting. A single position just to the right of the cursor is also selected.
 y  //Yank (copy).
 x  //Cut.
-p  //Paste.
+P  //Paste.
 3dd  //Delete/Cut 3 lines.
 3yy  //Copy 3 lines.
 :f!  //Displays the file name without truncation.
