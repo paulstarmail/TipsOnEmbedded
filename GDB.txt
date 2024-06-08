@@ -1,0 +1,32 @@
+Terminal based GDB debugging
+============================
+gcc -g <source file>  //-g flag includes debugging information in the compiled binary.
+gdb ./<binary name>  //Start debugging session for the binary.
+
++------------+---------------------------------------------------------------+
+| Command    | Description                                                   |
++------------+---------------------------------------------------------------+
+| run or r   | Executes the program from start to end.                       |
++------------+---------------------------------------------------------------+
+| break or b | Sets a breakpoint on a particular line.                       |
++------------+---------------------------------------------------------------+
+| disable    | Disables a breakpoint                                         |
++------------+---------------------------------------------------------------+
+| enable     | Enables a disabled breakpoint.                                |
++------------+---------------------------------------------------------------+
+| next or n  | Executes the next line of code without diving into functions. |
++------------+---------------------------------------------------------------+
+| step       | Goes to the next instruction, diving into the function.       |
++------------+---------------------------------------------------------------+
+| list or l  | Displays the code.                                            |
++------------+---------------------------------------------------------------+
+| print or p | Displays the value of a variable.                             |
++------------+---------------------------------------------------------------+
+| quit or q  | Exits out of GDB.                                             |
++------------+---------------------------------------------------------------+
+
+b <file name>:<line number>  //To place the breakoint.
+info b  //In order to see the breakpoints.
+disable b  //Disables all breakpoints.
+enable b  //Enables all breakpoints.
+call <function call without semicolon at the end>  //Eg: call printf("Output: %d\n", a) //Prints Output: <value of a>
