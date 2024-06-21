@@ -271,7 +271,7 @@ NAME      TYPE       SIZE USED PRIO
 Get the UUID of swap partition from GParted
 $ sudo vim /etc/default/grub
 Edit the below line:
-GRUB_CMDLINE_LINUX_DEFAULT="resume=<UUID of swap partition>"
+GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=<UUID of swap partition>"
 
 $ sudo update-grub
 $ reboot
