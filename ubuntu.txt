@@ -1,14 +1,3 @@
-Word wrap in micro
-==================
-micro ~/.config/micro/settings.json
-
-//Put the below code in it, at the end.
-
-{
-    "wordwrap": true,
-    "softwrap": true
-}
-
 Resume playback when opened in mpv
 ==================================
 vim ~/.config/mpv/mpv.conf
@@ -54,9 +43,9 @@ sudo fc-cache -fv
 
 Useful software
 ===============
-sudo apt install synaptic git meld minicom curl vim gparted ttf-mscorefonts-installer xclip openssh-server printer-driver-gutenprint
+sudo apt install synaptic git meld minicom curl vim gparted ttf-mscorefonts-installer openssh-server printer-driver-gutenprint
 
-micro p7zip PeaZip
+p7zip PeaZip
 
 To fix broken dependencies
 ==========================
@@ -108,6 +97,11 @@ OR
 Restart the terminal
 OR
 Re-login
+
+Fix for long shutdown
+=====================
+sudo vim /etc/systemd/system.conf
+Change "DefaultTimeoutStopSec" to lesser value.
 
 List all directories of a binary or a command added to $PATH
 ============================================================
