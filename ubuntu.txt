@@ -18,7 +18,7 @@ sudo adduser <user name>  //Automatically creates home directory for the user.
 
 Deleting/Removing a user
 ========================
-sudo deluser --remove-home <user name>  //Deletes/Removes user and his home directory.
+userdel -f <user name>  //Deletes/Removes user.
 
 Granding sudo permissions
 =========================
