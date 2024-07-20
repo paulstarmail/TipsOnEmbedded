@@ -43,9 +43,15 @@ sudo fc-cache -fv
 
 Useful software
 ===============
-sudo apt install synaptic git meld minicom curl vim gparted ttf-mscorefonts-installer openssh-server printer-driver-gutenprint riseup-vpn
+sudo apt install synaptic git meld minicom curl vim gparted ttf-mscorefonts-installer openssh-server printer-driver-gutenprint
 
 p7zip PeaZip
+
+Installing yt-dlp
+=================
+sudo add-apt-repository ppa:tomtomtom/yt-dlp
+sudo apt update
+sudo apt install yt-dlp
 
 To fix broken dependencies
 ==========================
