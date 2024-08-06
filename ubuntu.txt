@@ -136,7 +136,7 @@ Name=<application name>
 Exec=<full path to the executable> %f
 Terminal=false
 Type=Application
-Icon=<place the png file in /usr/share/pixmaps and specify its name here without the extension and path>
+Icon=<place the png file in /usr/share/pixmaps and specify its name here without the path>
 
 xdg-desktop-menu forceupdate  //Run this to refresh the .desktop files.
 
