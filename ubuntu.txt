@@ -1,3 +1,7 @@
+rsync
+=====
+rsync -avr --info=progress2 <path to source> <path to destination>
+
 Resume playback when opened in mpv
 ==================================
 vim ~/.config/mpv/mpv.conf
