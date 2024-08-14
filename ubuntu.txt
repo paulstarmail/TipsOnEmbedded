@@ -1,3 +1,9 @@
+netcat chat through terminal
+============================
+//This communication is not encrypted. So use  with caution.
+nc -lp <port>  //In the server.
+nc <server's IP> <server's port>  //In the client. <server's IP> is 127.0.0.1 while communicating between users in te same physical machine.
+
 rsync
 =====
 rsync -avr --info=progress2 <path to source> <path to destination>
