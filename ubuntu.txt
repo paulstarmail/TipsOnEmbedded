@@ -119,6 +119,10 @@ Fix for long shutdown
 sudo vim /etc/systemd/system.conf
 Change "DefaultTimeoutStopSec" to lesser value.
 
+Masking TPM service
+===================
+sudo systemctl mask dev-tpmrm0.device
+
 List all directories of a binary or a command added to $PATH
 ============================================================
 which -a <name of the binary or command>
