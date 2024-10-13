@@ -16,9 +16,17 @@ gdb ./<binary name>  //Start debugging session for the binary.
 +------------+---------------------------------------------------------------+
 | next or n  | Executes the next line of code without diving into functions. |
 +------------+---------------------------------------------------------------+
-| step       | Goes to the next instruction, diving into the function.       |
+| step or s  | Goes to the next instruction, diving into the function.       |
 +------------+---------------------------------------------------------------+
-| list or l  | Displays the code.                                            |
+| finish     | Returns from a function.                                      |
++------------+---------------------------------------------------------------+
+| continue   |                                                               |
+| or c:      | Continues execution until the next breakpoint.                |
++------------+---------------------------------------------------------------+
+| list or l  | Displays the code aroud the current line.                     |
++------------+---------------------------------------------------------------+
+| l:<line    |                                                               |
+| number>    | Displays the code around the line number.                     |
 +------------+---------------------------------------------------------------+
 | print or p | Displays the value of a variable.                             |
 +------------+---------------------------------------------------------------+
