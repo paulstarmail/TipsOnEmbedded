@@ -1,0 +1,16 @@
+1. Run the below command:
+
+$ git config --global -e
+
+2. Append or modify with the below entries:
+
+[core]
+  editor = code --wait
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
