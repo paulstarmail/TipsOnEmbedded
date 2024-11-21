@@ -33,7 +33,7 @@ gdb ./<binary name>  //Start debugging session for the binary.
 | quit or q  | Exits out of GDB.                                             |
 +------------+---------------------------------------------------------------+
 
-b <file name>:<line number>  //To place the breakoint.
+b <file name>:<line number>  //To place the breakpoint.
 info b  //In order to see the breakpoints.
 disable b  //Disables all breakpoints.
 enable b  //Enables all breakpoints.
