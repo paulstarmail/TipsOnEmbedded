@@ -264,7 +264,8 @@ sudo systemctl enable vsftpd
 
 Python based HTTP Server
 ========================
-python3 -m http.server 8080 --directory .
+python3 -m http.server <port>
+python3 -m http.server <port> --directory <path>
 
 SSH in Nautilus
 ===============
