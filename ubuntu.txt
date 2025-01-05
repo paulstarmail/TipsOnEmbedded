@@ -224,6 +224,30 @@ command_1 && command_2  //Execute command_2 only when command_1 is executed succ
 command_1 || command_2  //Execute command_2 only when command_1 is not successful executed.
 command_1 ; command_2  //Execute command_1 and command_2 even if they are successful or not.
 
+Configure SFTP Server
+=====================
+sudo adduser hawk_sftp
+sudo mkdir -p /var/sftp/files
+sudo chown root:root /var/sftp
+sudo chmod 755 /var/sftp
+sudo chown hawk_sftp:hawk_sftp /var/sftp/files
+sudo vim /etc/ssh/sshd_config
+
+Match User hawk_sftp
+ForceCommand internal-sftp
+PasswordAuthentication yes
+ChrootDirectory /var/sftp
+PermitTunnel no
+AllowAgentForwarding no
+AllowTcpForwarding no
+X11Forwarding no
+
+sudo systemctl restart sshd
+sudo usermod -aG hawk_sftp hawk
+sudo chmod g+w -R /var/sftp/files
+
+Reboot
+
 Samba Share
 ===========
 sudo apt install nautilus-share
