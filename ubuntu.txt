@@ -127,6 +127,10 @@ List all directories of a binary or a command added to $PATH
 ============================================================
 which -a <name of the binary or command>
 
+List all the related files of a binary or a command added to $PATH
+==================================================================
+whereis <name of the binary or command>
+
 Create root password
 ====================
 sudo passwd root
@@ -250,17 +254,6 @@ Reboot
 
 Samba Share
 ===========
-sudo apt install nautilus-share
-sudo reboot
-Right-click on the folder to share in Nautilus > Sharing Options
-OR
-Right-click on the folder to share in Nautilus > Properties > Local Network Share > Check "Share this folder", "Allow others to create and delete files in this folder" and "Guest access (for people without a user account)" > Share
-Install necessary packages and give permissions when asked.
-
-AND
-
-Run and observe the sample output below
----------------------------------------
 hawk@hawk-pc:~$ sudo gpasswd --add hawk sambashare
 Adding user hawk to group sambashare
 hawk@hawk-pc:~$ sudo smbpasswd -a hawk
@@ -273,6 +266,17 @@ hawk@hawk-pc:~$ sudo vim /etc/samba/smb.conf
 usershare owner only = false
 server signing = mandatory
 smb encrypt = required
+server min protocol = SMB3
+client min protocol = SMB3
+
+
+Append
+------
+[SambaShare]
+    comment = Samba on Ubuntu
+    path = /home/hawk/Public/SambaShare
+    read only = no
+    browsable = yes
 
 Configure FTP Server
 ====================
