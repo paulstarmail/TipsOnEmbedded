@@ -267,6 +267,12 @@ hawk@hawk-pc:~$ sudo smbpasswd -a hawk
 New SMB password:
 Retype new SMB password:
 Added user hawk.
+hawk@hawk-pc:~$ sudo vim /etc/samba/smb.conf
+
+[global]
+usershare owner only = false
+server signing = mandatory
+smb encrypt = required
 
 Configure FTP Server
 ====================
