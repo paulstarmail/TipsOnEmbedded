@@ -1,0 +1,89 @@
+Different types of Shells
+=========================
+In Unix-like operating systems, there are different types of shells that serve various purposes. Here are the main types:
+
+Login Shell
+-----------
+A login shell is initiated when a user logs in to the system. It reads and executes commands from specific startup files, such as .profile, .bash_profile, or /etc/profile.
+It is typically started by logging in via a terminal, SSH, or a graphical login manager.
+Example: When you log in to a remote server using SSH, the shell you get is a login shell.
+
+Non-Login Shell
+---------------
+A non-login shell is started without logging in, usually by opening a new terminal window or running a shell script.
+It does not read the same startup files as a login shell but may read other configuration files like .bashrc or .zshrc.
+Example: Opening a new terminal window in a graphical desktop environment usually starts a non-login shell.
+
+Interactive Shell
+-----------------
+An interactive shell is one that interacts with the user, accepting and executing commands typed by the user.
+Both login and non-login shells can be interactive if they are used to run commands interactively.
+Example: Any shell session where you type commands and see immediate responses is an interactive shell.
+
+Non-Interactive Shell
+---------------------
+A non-interactive shell is used to execute scripts and does not interact with the user.
+It reads commands from a script file and executes them without user intervention.
+Example: Running a shell script from the command line or a cron job uses a non-interactive shell.
+
+Restricted Shell
+----------------
+A restricted shell limits the user's ability to execute certain commands or access certain parts of the filesystem.
+It is used to provide a more controlled environment, often for security purposes.
+Example: rbash (restricted Bash) is a version of Bash that restricts certain functionalities.
+
+Login vs. Non-Login Shells in Bash
+==================================
+Login Shell: Reads /etc/profile, ~/.bash_profile, ~/.bash_login, and ~/.profile.
+
+Non-Login Shell: Reads ~/.bashrc.
+
+Differences between (Login Shells) /etc/profile, ~/.bash_profile, ~/.bash_login, and ~/.profile
+===============================================================================================
+These files are used to configure the environment for login shells in Unix-like operating systems, particularly for the Bash shell. Here's a breakdown of each:
+
+/etc/profile
+============
+This is a system-wide configuration file that is executed for login shells. It sets up environment variables and other settings that apply to all users on the system.
+It is read and executed by the shell when a user logs in, before any user-specific configuration files.
+
+~/.bash_profile
+===============
+This is a user-specific configuration file for login shells. It is executed after /etc/profile and can be used to set environment variables, aliases, and other settings specific to the user.
+If ~/.bash_profile exists, it is read and executed by the shell when the user logs in.
+
+~/.bash_login
+=============
+This file is similar to ~/.bash_profile and is also used for user-specific configuration for login shells.
+It is read and executed only if ~/.bash_profile does not exist. This provides an alternative file for user-specific settings.
+
+~/.profile
+==========
+This is another user-specific configuration file for login shells. It is more generic and can be used by other shells besides Bash (e.g., sh, ksh).
+It is read and executed if neither ~/.bash_profile nor ~/.bash_login exist. It is often used for setting environment variables and other settings that should apply regardless of the shell being used.
+
+Order of Execution
+------------------
+When a user logs in, the shell reads and executes these files in the following order:
+/etc/profile
+~/.bash_profile (if it exists)
+~/.bash_login (if ~/.bash_profile does not exist)
+~/.profile (if neither ~/.bash_profile nor ~/.bash_login exist)
+
+Example Usage
+-------------
+/etc/profile: System-wide settings, such as setting the PATH variable for all users.
+~/.bash_profile: User-specific settings, such as custom aliases and environment variables.
+~/.profile: Generic user-specific settings that apply to multiple shells.
+
+Differences between (Non-Login Shells) /etc/bash.bashrc, ~/.bashrc
+==================================================================
+/etc/bash.bashrc
+----------------
+This is a system-wide bashrc file. This file is executed for interactive non-login shells for all users on the system. It is used to set up environment variables, aliases, and other settings that should apply to all users.
+
+When a new interactive non-login shell is started, it reads and executes the commands in /etc/bash.bashrc before reading the user's personal ~/.bashrc file. This allows system administrators to define default settings that apply to all users, while still allowing users to customize their own shell environments.
+
+~/.bashrc
+---------
+This is user specific non-login shell and it is executed whenever a new terminal is opened after login.
