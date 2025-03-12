@@ -26,6 +26,10 @@ Adding new user
 ===============
 sudo adduser <user name>  //Automatically creates home directory for the user.
 
+Giving sudo privilege
+=====================
+sudo adduser <new user> sudo
+
 Deleting/Removing a user
 ========================
 userdel -f <user name>  //Deletes/Removes user.
