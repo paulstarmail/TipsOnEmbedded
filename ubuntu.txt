@@ -339,6 +339,11 @@ echo "export XDG_CURRENT_DESKTOP=ubuntu:GNOME" | tee -a ~/.xsessionrc
 sudo systemctl restart xrdp
 sudo pkill -u <user name>
 
+Remove password for a sudo command
+==================================
+sudo vim /etc/sudoers
+hawk ALL=NOPASSWD: /bin/systemctl hibernate
+
 Misc
 ====
 su -l root  //Login as root.
