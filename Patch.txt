@@ -1,0 +1,25 @@
+Creating a Patch with rsync
+===========================
+
+rsync -a --delete --write-batch=patchfile.batch old_dir/ new_dir/
+
+This command will not actually sync the directories but rather generate a batch file (patchfile.batch) that contains all the necessary information to update old_dir/ to new_dir/ (including both new, changed, and deleted files).
+Note: rsync uses checksums to determine differences, so it works efficiently even for binary files.
+
+Explanation of the options:
+-a: Archive mode (preserves symlinks, permissions, timestamps, etc.)
+--delete: Removes files from the destination that are no longer present in the source directory.
+--write-batch=patchfile.batch: Writes the changes between the two directories (old_dir/ and new_dir/) into a batch file (patchfile.batch).
+
+Applying the Patch with rsync
+=============================
+
+rsync --read-batch=patchfile.batch old_dir/ target_dir/
+
+This command will update target_dir/ to match new_dir/ based on the changes captured in patchfile.batch.
+Note: If the batch (patch) file and the old_dir/ is all what you have and you need to update the old_dir/ using the batch (patch) in place, then replace the second argument (target_dir/) with old_dir/. This is how software update system works over the internet.
+
+Explanation:
+--read-batch=patchfile.batch: Tells rsync to read the batch file and apply the changes.
+old_dir/: The source directory that we used to generate the patch (can be the original or any copy).
+target_dir/: The directory to which we want to apply the patch.
