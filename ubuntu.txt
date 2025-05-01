@@ -4,9 +4,20 @@ netcat chat through terminal
 nc -lp <port>  //In the server.
 nc <server's IP> <server's port>  //In the client. <server's IP> is 127.0.0.1 while communicating between users in te same physical machine.
 
-rsync
-=====
-rsync -avr --info=progress2 <path to source> <path to destination>
+rsync - example
+===============
+rsync -avr --info=progress2 Music Videos
+
+Copies Music folder as it is to inside of Videos folder with:
+-a: archive mode — preserves symbolic links, permissions, timestamps, etc.
+-v: verbose — shows progress.
+-r: recursive - this is redundant when using archive mode (-a).
+--info=progress2: This option modifies the information output during the transfer. progress2: This shows a more detailed progress summary of the file transfer, including both the overall progress and progress for individual files being copied. It will display the total transferred bytes, percentage, and the estimated time remaining.
+This is particularly useful when transferring large files or large sets of files, as it gives you a real-time view of how much data has been transferred and the transfer speed.
+
+rsync -avr --info=progress2 Music/ Videos
+
+Notice the trailing slash of Music/ folder. Copies the contents of Music/ folder (both hidden and non-hidden) to inside of Videos.
 
 Resume playback when opened in mpv
 ==================================
