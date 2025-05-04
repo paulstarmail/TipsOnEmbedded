@@ -1,0 +1,5 @@
+chroot
+======
+sudo debootstrap focal ubuntu-rootfs http://archive.ubuntu.com/ubuntu/
+sudo chroot ubuntu-rootfs
+echo 'export PS1="(chroot) \u@\h:\w\\$ "' >> /root/.bashrc
