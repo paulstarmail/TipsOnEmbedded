@@ -1,0 +1,13 @@
+On RPi
+======
+sudo apt update
+sudo apt install sane sane-utils libsane-dev
+sudo vim /etc/sane.d/saned.conf  #Add the IP of client machine here.
+sudo systemctl enable saned.socket
+sudo systemctl start saned.socket
+
+On client machine
+=================
+sudo apt update
+sudo apt install sane-utils
+sudo vim /etc/sane.d/net.conf  # Add the IP of RPi.
