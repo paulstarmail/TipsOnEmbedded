@@ -89,7 +89,7 @@ sudo fc-cache -fv
 
 Useful software
 ===============
-sudo apt install synaptic git meld minicom curl vim gparted ttf-mscorefonts-installer openssh-server printer-driver-gutenprint xclip micro
+sudo apt install synaptic git meld minicom curl vim trash-cli gparted ttf-mscorefonts-installer openssh-server printer-driver-gutenprint xclip micro
 
 p7zip PeaZip
 
