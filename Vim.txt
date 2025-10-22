@@ -6,10 +6,13 @@ vim <name of the file>  //Creates the file in Vim.
 i  //Insert mode.
 v  //Visual mode, for selection and copy/cut-pasting. A single position just to the right of the cursor is also selected.
 y  //Yank (copy).
-x  //Cut.
+"+y  //Yank to system clipboard.
+"+d  //Delete/Cut to system clipboard.
 P  //Paste.
 3dd  //Delete/Cut 3 lines.
+"+3dd  //Delete/Cut 3 lines to system clipboard.
 3yy  //Copy 3 lines.
+"+3yy  //Copy 3 lines to system clipboard.
 :f!  //Displays the file name without truncation.
 gg  //Places the cursor at the start of the file.
 G  //Places the cursor at the end of the file.
@@ -75,4 +78,9 @@ set hlsearch
 set number
 set tabstop=4
 set shiftwidth=4
+
+Enable System Clipboard
+=======================
+sudo apt install vim-gtk3
+
 
