@@ -1,0 +1,27 @@
+SSH Tunnel to re-route internet traffic
+=======================================
+ssh -D 8080 -N -q <username of remote server>@<public IP of remote server> -p <public SSH port of remote server>
+
+For Chrome/Chromium-based Browsers
+----------------------------------
+Go to Settings > Privacy and security > Security > Manage certificates > Authorities.
+Alternatively, you can use an extension like FoxyProxy to manage your proxy settings more easily.
+Set up a manual proxy configuration:
+Manual proxy configuration:
+HTTP proxy: localhost
+Port: 8080
+HTTPS proxy: localhost
+Port: 8080
+SOCKS proxy:
+SOCKS Version: 5
+Host: localhost
+Port: 8080
+
+For Firefox
+-----------
+Go to Settings > Network Settings > Settings... > Settings.
+Select Manual proxy configuration.
+Set:
+SOCKS Host: 127.0.0.1
+Port: 8080
+SOCKS Version: 5
