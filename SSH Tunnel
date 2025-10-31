@@ -4,16 +4,23 @@ ssh -D 8080 -N -q <username of remote server>@<public IP of remote server> -p <p
 
 For Chrome/Chromium-based Browsers
 ----------------------------------
-Go to Settings > Privacy and security > Security > Manage certificates > Authorities.
-Alternatively, you can use an extension like FoxyProxy to manage your proxy settings more easily.
-Set up a manual proxy configuration:
-Manual proxy configuration:
-HTTP proxy: localhost
+Option 1: Use a system-wide proxy
+Windows:
+Go to Settings > Network & Internet > Proxy.
+Under Manual proxy setup, enable Use a proxy server, and set:
+Address: localhost
 Port: 8080
-HTTPS proxy: localhost
-Port: 8080
-SOCKS proxy:
-SOCKS Version: 5
+macOS:
+Go to System Preferences > Network > Advanced > Proxies.
+Check SOCKS Proxy, set host localhost, port 8080.
+Linux (GNOME):
+Go to Settings > Network > Network Proxy
+Select Manual, SOCKS Host: localhost, Port: 8080
+
+Option 2: Use a proxy extension like FoxyProxy
+Install FoxyProxy from the Chrome Web Store.
+Add a new proxy configuration:
+Proxy Type: SOCKS5
 Host: localhost
 Port: 8080
 
