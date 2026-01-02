@@ -38,6 +38,7 @@ u  //Undo.
 Ctrl + r  //Redo.
 //By default, Vim uses regular expression for search and, search and replace.
 /<search term>  //Search for the term with case sensitive.
+/<Up arrow>  //To get previous search term.
 /<search term, note: use "\<regex character>" to escape regex characters>  //For non-regex search.
 /<search term>\c  //Search for the term with case insensitive.
 :%s/<search term>\c/<replace term>/g  //For case insensitive search to replace all. Use "\<regex character>" in search term or replace term to non-regex search (eascaping).
@@ -83,6 +84,7 @@ set shiftwidth=4
 Enable System Clipboard
 =======================
 sudo apt install vim-gtk3
+
 
 
 
