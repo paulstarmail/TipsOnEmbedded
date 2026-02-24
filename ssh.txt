@@ -1,0 +1,14 @@
+Connecting through SSH to Server
+================================
+If there is no Public key in ~/.ssh directory of the client, then create it using:
+ssh-keygen -t ed25519 -C "<A comment, preferably email ID to identify in the server's ~/.ssh/authorized_keys>"
+
+Then:
+ssh-copy-id <user name>@<IP address of server>
+Or:
+ssh-copy-id -p <port> <user name>@<IP address of server>
+
+If you saved your key with a non-default name, specify it with the -i flag:
+ssh -i ~/.ssh/<My custom key> <user name>@<IP address of server>
+Or:
+ssh -p <port> -i ~/.ssh/<My custom key> <user name>@<IP address of server>
