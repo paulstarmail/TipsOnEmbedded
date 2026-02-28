@@ -1,0 +1,15 @@
+less
+====
+Space  //Next page
+b  //Previous page
+Enter  //Next line
+g  //Go to beginning
+G  //Go to end
+/word  //Search forward
+n  //Next search result
+q  //Quit
+
+Examples
+========
+ls -al | less
+man cp  //Automatically uses less
