@@ -5,7 +5,7 @@ b  //Previous page
 Enter  //Next line
 g  //Go to beginning
 G  //Go to end
-/word  //Search forward
+/<search term>  //Search forward
 n  //Next search result
 q  //Quit
 
