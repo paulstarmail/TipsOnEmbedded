@@ -21,7 +21,7 @@ gdb ./<binary name>  //Start debugging session for the binary.
 | finish     | Returns from a function.                                      |
 +------------+---------------------------------------------------------------+
 | continue   |                                                               |
-| or c:      | Continues execution until the next breakpoint.                |
+| or c       | Continues execution until the next breakpoint.                |
 +------------+---------------------------------------------------------------+
 | list or l  | Displays the code aroud the current line.                     |
 +------------+---------------------------------------------------------------+
@@ -32,9 +32,27 @@ gdb ./<binary name>  //Start debugging session for the binary.
 +------------+---------------------------------------------------------------+
 | quit or q  | Exits out of GDB.                                             |
 +------------+---------------------------------------------------------------+
+| backtrace  | Displays call stack.                                          |
+| or bt      |                                                               |
++------------+---------------------------------------------------------------+
 
 b <file name>:<line number>  //To place the breakpoint.
+clear <file name>:<line number>  //Clear the breakpoint.
 info b  //In order to see the breakpoints.
 disable b  //Disables all breakpoints.
 enable b  //Enables all breakpoints.
+
+p <variable name>  //Prints the value of the variable.
+p/x <variable name>  //To print in Hexadecimal.
+p/t <variable name>  //Binary
+p/u <variable name>  //Decimal (Unsigned)
+p/s <variable name> //String (useful if <variable name> is a pointer to a char array)
+
 call <function call without semicolon at the end>  //Eg: call printf("Output: %d\n", a) //Prints Output: <value of a>
+
+bt full  //Displays the call stack along with the values of local variables for each frame.
+Navigating the Stack: After viewing the stack, you can move between frames to inspect variables in different scopes: 
+frame <number>  //Selects a specific frame (e.g., frame 2) to make it the current context for commands like print.
+up / down  //Moves one level higher (toward main) or lower (toward the current function) in the stack.
+info args  //Displays the arguments passed to the function in the currently selected frame.
+info locals  //Displays the local variables of the currently selected frame.
