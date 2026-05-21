@@ -77,7 +77,8 @@ sudo apt update
 sudo apt upgrade
 sudo apt-cache search <package name>
 sudo apt install <package name>
-sudo apt install <path to .deb package>
+sudo apt install <path to .deb package>  //Installs .deb package.
+apt list --installed  //Lists all installed .deb packages.
 sudo apt remove --purge <package name>
 
 sudo apt autoremove
