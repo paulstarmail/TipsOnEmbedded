@@ -1,0 +1,5 @@
+Access Control List
+===================
+setfacl -d -m u:<user>:rwX,g:<group>:rwX, o::r <path to the containing folder>  //To set future default permissions.
+setfacl -R -m u:<user>:rwX,g:<group>:rwX, o::r <path to the containing folder>  //To set default permissions for existing files and folders.
+getfacl <path to the containing folder>  //To view current permissions.
