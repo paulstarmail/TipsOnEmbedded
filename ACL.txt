@@ -1,5 +1,10 @@
 Access Control List
 ===================
-setfacl -d -m u:<user>:rwX,g:<group>:rwX, o::r <path to the containing folder>  //To set future default permissions.
-setfacl -R -m u:<user>:rwX,g:<group>:rwX, o::r <path to the containing folder>  //To set default permissions for existing files and folders.
-getfacl <path to the containing folder>  //To view current permissions.
+#Set active permissions recursively for ALL CURRENT files and folders
+setfacl -R -m u:<user>:rwX,g:<group>:rwX,o::r <path>
+
+#Set DEFAULT permissions so ALL FUTURE files/folders inherit them automatically
+setfacl -d -m u:<user>:rwX,g:<group>:rwX,o::r <path>
+
+#View the applied permissions (both active and default)
+getfacl <path>
