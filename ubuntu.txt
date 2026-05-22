@@ -90,9 +90,13 @@ sudo fc-cache -fv
 
 Useful software
 ===============
-sudo apt install synaptic git meld minicom curl vim trash-cli gparted ttf-mscorefonts-installer openssh-server printer-driver-gutenprint xclip micro
+sudo apt install synaptic git meld minicom curl vim trash-cli gparted ttf-mscorefonts-installer openssh-server printer-driver-gutenprint xclip micro xkill
 
 p7zip PeaZip
+
+xkill
+=====
+xkill  //Running this in terminal causes the cursor to become "x" shaped. Left click on the window to be killed. Right click to abort.
 
 Installing yt-dlp
 =================
