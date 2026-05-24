@@ -1,6 +1,8 @@
 Access Control List
 ===================
 The only valid permission letters are lowercase r (read), lowercase w (write), lowercase x (execute), and the special capital X (conditional execute). If it's a directory, Linux converts that capital X into a standard lowercase x and saves it. If it's a plain text file, Linux drops the X entirely and just saves rw.
+If rwX is given. Files will have read and write permissions and folders will have read, write and execute permissions.
+If rwx is given. Files will have read, write and execute permissions and folders will have read, write and execute permissions.
 
 #Set active permissions recursively for ALL CURRENT files and folders
 setfacl -R -m u:<user>:rwX,g:<group>:rwX,o::r <path>  //-R means recursive. -m means modify. 
