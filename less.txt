@@ -6,7 +6,8 @@ Enter  //Next line
 g  //Go to beginning
 G  //Go to end
 /<search term>  //Search forward
-n  //Next search result
+n  //Next search match
+N  //Previous search match
 q  //Quit
 
 Examples
