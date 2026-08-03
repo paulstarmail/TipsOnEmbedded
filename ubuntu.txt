@@ -313,9 +313,9 @@ client min protocol = SMB3
 
 Append
 ------
-[SambaShare]
+[samba_share]
     comment = Samba on Ubuntu
-    path = /home/hawk/Public/SambaShare
+    path = /home/hawk/Public/samba_share
     read only = no
     browsable = yes
 
