@@ -271,27 +271,26 @@ command_1 ; command_2  //Execute command_1 and command_2 even if they are succes
 
 Configure SFTP Server
 =====================
-sudo adduser hawk_sftp
-sudo mkdir -p /var/sftp/files
-sudo chown root:root /var/sftp
-sudo chmod 755 /var/sftp
-sudo chown hawk_sftp:hawk_sftp /var/sftp/files
+sudo adduser hawk-sftp
+sudo mkdir -p /home/hawk-sftp/sftp_share
+sudo chown root:root /home/hawk-sftp
+sudo chmod 755 /home/hawk-sftp
+sudo chown hawk-sftp:hawk-sftp /home/hawk-sftp/sftp_share
+sudo chmod 774 -R /home/hawk-sftp/sftp_share
 sudo vim /etc/ssh/sshd_config
 
-Match User hawk_sftp
-ForceCommand internal-sftp
-PasswordAuthentication yes
-ChrootDirectory /var/sftp
-PermitTunnel no
-AllowAgentForwarding no
-AllowTcpForwarding no
-X11Forwarding no
+Subsystem sftp internal-sftp
+Match User hawk-sftp
+    ChrootDirectory %h
+    PermitTTY no
+    ForceCommand internal-sftp
+    AllowTcpForwarding no
+    X11Forwarding no
 
+sudo setfacl -m -R u:hawk:rwX,g:hawk:rwX,o::r /home/hawk-sftp/sftp_share
+sudo setfacl -d -m u:hawk:rwX,g:hawk:rwX,o::r /home/hawk-sftp/sftp_share
+sudo usermod -aG sftpusers hawk-sftp
 sudo systemctl restart sshd
-sudo usermod -aG hawk_sftp hawk
-sudo chmod g+w -R /var/sftp/files
-
-Reboot
 
 Samba Share
 ===========
