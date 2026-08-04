@@ -309,9 +309,8 @@ smb encrypt = required
 server min protocol = SMB3
 client min protocol = SMB3
 
-
 Append
-------
+
 [samba_share]
     comment = Samba on Ubuntu
     path = /home/hawk/Public/samba_share
