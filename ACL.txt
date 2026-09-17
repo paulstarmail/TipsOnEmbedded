@@ -5,10 +5,10 @@ If rwX is given. Files will have read and write permissions and folders will hav
 If rwx is given. Files will have read, write and execute permissions and folders will have read, write and execute permissions.
 
 #Set active permissions recursively for ALL CURRENT files and folders
-setfacl -R -m u:<user>:rwX,g:<group>:rwX,o::r <path>  //-R means recursive. -m means modify. 
+setfacl -R -m u:<user>:rwX,g:<group>:rwX,o::rX <path>  #-R means recursive. -m means modify. 
 
 #Set DEFAULT permissions so ALL FUTURE files/folders inherit them automatically
-setfacl -d -m u:<user>:rwX,g:<group>:rwX,o::r <path>  //-d means default. -m means modify.
+setfacl -R -d -m u:<user>:rwX,g:<group>:rwX,o::rX <path>  #-R means recursive. -d means default. -m means modify.
 
 #View the applied permissions (both active and default)
 getfacl <path>
