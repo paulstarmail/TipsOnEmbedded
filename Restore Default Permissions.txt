@@ -1,0 +1,8 @@
+Default folder permission: 755
+Default file permission: 644
+
+find <path> -type d -exec chmod 755 {} +  #Restores folder permissions.
+find <path> -type f -exec chmod 644 {} +  #Restores file permissions.
+
+{}: Acts as a placeholder where find inserts the names of the files and folders it discovers.
++: Tells the system to run chmod once on a large group of those items at a time, rather than spawning a brand-new chmod process for every single file.
